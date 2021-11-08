@@ -9,6 +9,7 @@ The program searches for all .jpg and .png files and resizes each image to 128x1
 * OpenCV (https://pypi.org/project/opencv-python/) (If you have pip installed, you can directly download OpenCV from the command prompt using the command       pip install opencv-python    )
 
 ## Steps
+* Download main.py
 * Place main.py in the folder with all your sub badges saved as a .PNG file. The original image can be of any size
 * Double click on main.py and the comman prompt opens
 * Press Enter and all your images will be resized
