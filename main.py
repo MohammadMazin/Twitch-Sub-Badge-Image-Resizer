@@ -19,24 +19,27 @@ for root, directories, file in os.walk(path):
 
 print("----------------------------------------------------------")
 print()
-name = input("Enter title of Image: ")
+input("Press Enter to Continue...")
 
 for root, directories, file in os.walk(path):
     for file in file:
         if(file.endswith(".jpg") or file.endswith(".png")):
             paths = os.path.join(root,file)
-            img = cv2.imread(paths[length+1:])
+            img = cv2.imread(paths[length+1:],cv2.IMREAD_UNCHANGED)
             
             im128 = cv2.resize(img, (128,128))
             im72 = cv2.resize(img, (72,72))
             im32 = cv2.resize(img, (32,32))
             im18 = cv2.resize(img, (18,18))
             
-            fileName128 = name+"_128x128.png"
-            fileName72 = name+"_72x72.png"
-            fileName32 = name+"_32x32.png"
-            fileName18 = name+"_18x18.png"
+           
+            
+            fileName128 = paths[length+1:(len(paths)-4)]+"_128x128.png"
+            fileName72 = paths[length+1:(len(paths)-4)]+"_72x72.png"
+            fileName32 = paths[length+1:(len(paths)-4)]+"_32x32.png"
+            fileName18 = paths[length+1:(len(paths)-4)]+"_18x18.png"
             cv2.imwrite(fileName128, im128)
             cv2.imwrite(fileName72, im72)
             cv2.imwrite(fileName32, im32)
             cv2.imwrite(fileName18, im18)
+            count=count+1
